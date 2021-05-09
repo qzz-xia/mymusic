@@ -1,0 +1,32 @@
+<!--pages/rigister/rigister.wxml-->
+<view class="container">
+  <view class="wrapper">
+    <view class="left-top-sign">RIGISTER</view>
+    <view class="welcome">
+      欢迎使用mymusic！
+    </view>
+    <view class="input-content">
+      <view class="input-item">
+        <text class="tit">手机号码</text>
+        <input  type="text" placeholder="请输入手机号码"/>
+      </view>
+      <view class="input-item">
+        <text class="tit">密码</text>
+        <input type="password"  placeholder="请输入密码"/>
+      </view>
+      <view class="input-item">
+        <text class="tit">昵称</text>
+        <input type="password"  placeholder="请输入昵称"/>
+      </view>
+      <view class="input-item">
+        <text class="tit">验证码</text>
+        <input type="password"  placeholder="请输入验证码"/>
+      </view>
+    </view>
+    <button class="confirm-btn">立即注册</button>
+  </view>
+  <view class="register-section">
+    已有账户!!!
+    <text bindtap="goLogin">马上登录</text>
+  </view>
+</view>

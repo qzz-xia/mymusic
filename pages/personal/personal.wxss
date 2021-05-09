@@ -1,5 +1,4 @@
 /* pages/personal/personal.wxss */
-/* pages/personal/personal.wxss */
 .personalContainer {
     width: 100%;
     height: 100%;
@@ -10,6 +9,7 @@
     height: 520rpx;
     position: relative;
     padding: 100rpx 30rpx 0;
+    background-color: #70D6D6;
   }
   .user-section .bg {
     position: absolute;
@@ -34,7 +34,7 @@
   .user-info-box .portrait{
     width: 130rpx;
     height: 130rpx;
-    border:5rpx solid #fff;
+    border:5rpx solid red;
     border-radius: 50%;
   }
   .user-info-box .username{
@@ -43,82 +43,6 @@
     margin-left: 20rpx;
   }
   
-  
-  /* vip-box */
-  .vip-card-box {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    /* background: linear-gradient(left, red, black); */
-    background: rgba(0, 0, 0, .7);
-    height: 240rpx;
-    color: #f7d680;
-    border-radius: 16rpx 16rpx 0 0;
-    padding: 20rpx 24rpx;
-  }
-  
-  
-  .vip-card-box .card-bg{
-    position:absolute;
-    top: 20rpx;
-    right: 0;
-    width: 380rpx;
-    height: 260rpx;
-  }
-  
-  .vip-card-box .b-btn{
-    position: absolute;
-    right: 20rpx;
-    top: 16rpx;
-    width: 132rpx;
-    height: 40rpx;
-    text-align: center;
-    line-height: 40rpx;
-    font-size: 22rpx;
-    color: #36343c;
-    border-radius: 20px;
-    background: #f9e6af;
-    z-index: 1;
-  }
-  
-  .vip-card-box .b-btn{
-    position: absolute;
-    right: 20rpx;
-    top: 16rpx;
-    width: 132rpx;
-    height: 40rpx;
-    text-align: center;
-    line-height: 40rpx;
-    font-size: 22rpx;
-    color: #36343c;
-    border-radius: 20px;
-    /*background: linear-gradient(left, #f9e6af, #ffd465);*/ /*渐变不生效*/
-    background: #f9e6af;
-    z-index: 1;
-  }
-  
-  .vip-card-box .tit {
-    font-size: 22rpx;
-    color: #f7d680;
-    margin-bottom: 28rpx;
-  }
-  .vip-card-box .tit .iconfont{
-    color: #f6e5a3;
-    margin-right: 16rpx;
-  }
-  
-  
-  
-  
-  .vip-card-box .e-m{
-    font-size: 34rpx;
-    margin-top: 10rpx;
-  }
-  .vip-card-box .e-b{
-    font-size: 24rpx;
-    color: #d8cba9;
-    margin-top: 10rpx;
-  }
   
   
   .cover-container{

@@ -21,6 +21,7 @@
     text-align: center;
     line-height: 100rpx;
     color: #fff;
+    font-size: 60rpx;
 }
 .recommendSongContainer .header .date .day{
     font-size: 60rpx;

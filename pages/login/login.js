@@ -120,6 +120,13 @@ Page({
 
   },
 
+  // 跳转到注册页
+  goRigister(){
+    wx.navigateTo({
+      url: '/pages/rigister/rigister'
+    })
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

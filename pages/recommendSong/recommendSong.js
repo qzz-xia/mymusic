@@ -9,6 +9,7 @@ Page({
   data: {
     day: '', // 天
     month: '', // 月
+    year:'',//年
     recommendList: [], // 推荐列表数据
     index: 0, // 点击音乐的下标
   },
@@ -34,7 +35,8 @@ Page({
     // 更新日期的状态数据
     this.setData({
       day: new Date().getDate(),
-      month: new Date().getMonth() + 1
+      month: new Date().getMonth() + 1,
+      year: new Date().getFullYear()
     })
   
     // 获取每日推荐的数据

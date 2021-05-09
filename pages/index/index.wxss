@@ -2,7 +2,7 @@
 .indexContainer .header{
   display: flex;
   padding: 10rpx;
-  background: #d43c33;
+  background: #70D6D6;
 }
 .indexContainer .header image{
   width: 60rpx;
@@ -50,7 +50,7 @@
   border-radius: 50%;
   text-align: center;
   line-height: 100rpx;
-  background: rgb(240, 19, 19);
+  background: #70D6D6;
   font-size: 50rpx;
   color: white;
   margin: 20px 0;

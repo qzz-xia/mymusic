@@ -17,6 +17,9 @@ Page({
     currentTime: '00:00',  // 实时时间
     durationTime: '00:00', // 总时长
     currentWidth: 0, // 实时进度条的宽度
+    musicWordList:[],//歌词
+    shows:false,//隐藏磁盘
+    showsWord:true,//显示歌词 
   },
 
   /**
@@ -33,7 +36,6 @@ Page({
     })
     // 获取音乐详情
     this.getMusicInfo(musicId);
-    
     
     /*
     * 问题： 如果用户操作系统的控制音乐播放/暂停的按钮，页面不知道，导致页面显示是否播放的状态和真实的音乐播放状态不一致
@@ -90,7 +92,8 @@ Page({
       
     })
   
-  
+    // 获取歌词
+    this.getMusicWord(musicId)
     
   },
   // 修改播放状态的功能函数
@@ -135,8 +138,11 @@ Page({
         let musicLinkData = await request('/song/url', {id: musicId});
         musicLink = musicLinkData.data[0].url;
         
+        
+       
+
         this.setData({
-          musicLink
+          musicLink,
         })
       }
       
@@ -147,7 +153,42 @@ Page({
     }
     
   },
-  
+
+  // 获取歌词
+  async getMusicWord(musicId){
+    // 获取音乐歌词
+    let musicWordListData = await request('/lyric',{id:musicId})
+    // console.log(musicWordListData.lrc.lyric)
+    let arr = musicWordListData.lrc.lyric.split("\n")
+    // console.log(arr)
+    let row = arr.length; //歌词行数
+    // console.log(row)
+    for(let i = 0;i<row; i++){
+      let temp_row = arr[i]
+      let temp_arr = temp_row.split("]");
+      let text = temp_arr.pop();
+      // console.log(text)
+      this.data.musicWordList.push(text)
+      
+    }
+    // console.log(this.data.musicWordList)
+    
+    // console.log(this.data.musicWordList[0])
+    this.setData({
+      musicWordList:this.data.musicWordList
+    })   
+  },
+
+  // 显示歌词
+  showWord(){
+    this.setData({
+      shows:!this.data.shows,
+      showsWord:this.data.shows
+  })
+
+
+  },
+
   // 点击切歌的回调
   handleSwitch(event){
     // 获取切歌的类型
