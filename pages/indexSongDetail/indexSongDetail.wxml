@@ -1,4 +1,4 @@
-<!--pages/songDetail/songDetail.wxml-->
+<!--pages/indexSongDetail/indexSongDetail.wxml-->
 <view class="songDetailContainer" style="background-image: url({{song.al.picUrl}});background-size:cover;">
     <view class="authors">
         <view class="author">{{song.name}}</view>

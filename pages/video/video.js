@@ -20,6 +20,21 @@ Page({
    */
   onLoad: function (options) {
 
+    // 判断用户是否登录
+    let userInfo = wx.getStorageSync('userInfo');
+    if(!userInfo){
+      wx.showToast({
+        title: '请先登录',
+        icon: 'none',
+        success: () => {
+          // 跳转至登录界面
+          wx.reLaunch({
+            url: '/pages/login/login'
+          })
+        }
+      })
+    }
+
     // 获取导航数据
     this.getVideoGroupListData()
     

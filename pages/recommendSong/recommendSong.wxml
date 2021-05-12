@@ -2,7 +2,7 @@
 <view class="recommendSongContainer">
     <!-- 头部区域 -->
     <view class="header">
-        <image src="/static/images/recommendSong/recommendSong.jpg"></image>
+        <image src="/static/images/recommendSong/bg.jpg"></image>
         <view class="date">
             <text class="year">{{year}}/</text>
             <text class="month">{{month}}/</text>

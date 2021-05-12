@@ -3,7 +3,7 @@
     <!-- 头部搜索区域 -->
     <view class="header">
         <view class="searchInput">
-            <text class="iconfont icon-search1 searchIcon"></text>
+            <text class="iconfont icon-sousuo1 searchIcon"></text>
             <input type="text" value="{{searchContent}}" placeholder="{{placeholderContent}}" placeholder-class="placeholder" bindinput="handleInputChange" />
             <text class="clear" bindtap="clearSearchContent" hidden="{{!searchContent}}">X</text>
         </view>
@@ -16,7 +16,7 @@
             <view class="searchContent">搜索内容:{{searchContent}}</view>
             <view class="searchList">
                 <view class="searchItem" wx:for="{{searchList}}" wx:key="id">
-                    <text class="iconfont icon-search1"></text>
+                    <text class="iconfont icon-sousuo1"></text>
                     <text class="content">{{item.name}}</text>
                 </view>
             </view>

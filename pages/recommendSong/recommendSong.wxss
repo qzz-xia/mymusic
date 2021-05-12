@@ -20,8 +20,11 @@
     height: 100rpx;
     text-align: center;
     line-height: 100rpx;
-    color: #fff;
+    color: black;
     font-size: 60rpx;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 30rpx;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .recommendSongContainer .header .date .day{
     font-size: 60rpx;

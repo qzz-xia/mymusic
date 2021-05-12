@@ -55,6 +55,14 @@
   color: white;
   margin: 20px 0;
 }
+
+.navItem .icon-tubiaosvg-{
+  font-size: 70rpx;
+}
+.navItem .icon-MV-wangyiicon{
+  font-size: 70rpx;
+}
+
 .navItem text{
   font-size: 26rpx;
 }
@@ -100,7 +108,11 @@
   padding: 20rpx;
 }
 .topListSwiper{
-  height: 400rpx;
+  height: 420rpx;
+}
+.scroll-y{
+  height: 480rpx;
+  overflow-y: scroll;
 }
 .swiperItem{
   width: 96%;

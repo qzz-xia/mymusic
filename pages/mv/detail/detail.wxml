@@ -1,0 +1,24 @@
+<!--pages/mv/detail/detail.wxml-->
+<view class="m-mv">
+    <video id="myVideo" class="video" src="{{mv_url}}" ></video>
+    <view class="m-titlemv">
+        <view class="tt">
+            <view class="name f-brk">
+                <text>{{name}}</text>
+            </view>
+        </view>
+        <view class="singer" >
+            歌手：<text wx:for="{{artists}}" wx:key="id" data-id="{{item.id}}">{{item.name}}-</text>
+        </view>
+
+        <view class="info">
+            <view class="time">发布时间：{{publishTime}}</view>
+            <view class="played">
+                播放：{{playCount}}
+            </view>
+        </view>
+        <view class="intrmv">
+            {{desc}}
+        </view>
+    </view>
+</view>

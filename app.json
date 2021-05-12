@@ -1,13 +1,16 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/mv/recommend/recommend",
     "pages/rigister/rigister",
     "pages/personal/personal",
     "pages/recommendSong/recommendSong",
     "pages/songDetail/songDetail",
     "pages/search/search",
     "pages/video/video",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/mv/detail/detail",
+    "pages/indexSongDetail/indexSongDetail"
   ],
   "style": "v2",
   "sitemapLocation": "sitemap.json",

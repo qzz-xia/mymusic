@@ -29,7 +29,11 @@
 .searchIcon{
     position: absolute;
     left: 15rpx;
+    
 }
+.icon-sousuo1{
+    color: #bfbfbf;
+} 
 .searchInput input{
     margin-left: 50rpx;
     height: 60rpx;

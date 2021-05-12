@@ -20,23 +20,23 @@
   <!-- 图标导航区域 -->
   <view class="navContainer">
     <view class="navItem" bindtap="toRecommendSong">
-      <text class="iconfont icon-meirituijian"></text>
+      <text class="iconfont icon-tubiaosvg-"></text>
       <text>每日推荐</text>
     </view>
-    <view class="navItem">
-      <text class="iconfont icon-gedan1"></text>
-      <text>歌单</text>
+    <view class="navItem" bindtap="goMv">
+      <text class="iconfont icon-MV-wangyiicon"></text>
+      <text>MV</text>
     </view>
     <view class="navItem">
-      <text class="iconfont icon-icon-ranking"></text>
+      <text class="iconfont icon-icon-bar-chart-bold"></text>
       <text>排行榜</text>
     </view>
     <view class="navItem">
       <text class="iconfont icon-diantai"></text>
-      <text>电台</text>
+      <text>私人FM</text>
     </view>
     <view class="navItem">
-      <text class="iconfont icon-zhiboguankanliangbofangsheyingshexiangjixianxing"></text>
+      <text class="iconfont icon-zhibobofangshexiangjiguankanxianxing"></text>
       <text>直播</text>
     </view>
   </view>
@@ -44,7 +44,7 @@
   <!-- 推荐歌曲区域 -->
   <view class="recommendContainer">
     <!-- 头部区域 -->
-    <NavHeader title="推荐歌曲" nav="为你精心推荐"></NavHeader>
+    <NavHeader title="推荐歌曲"></NavHeader>
 
     <!-- 推荐内容区域 -->
     <scroll-view class="recommendScroll" enable-flex="true" scroll-x="{{true}}">
@@ -58,17 +58,26 @@
   <!-- 排行榜区域 -->
   <view class="topList">
     <!-- 头部区域 -->
-    <NavHeader title="排行榜" nav="热歌风向标"></NavHeader>
+    <NavHeader title="排行榜"></NavHeader>
     <!-- 内容区域 -->
     <swiper class="topListSwiper" circular="{{true}}" next-margin="50rpx" previous-margin="50rpx">
       <swiper-item wx:for="{{topList}}" wx:key="name">
-        <view class="swiperItem">
+          <view class="swiperItem">
           <view class="title">{{item.name}}</view>
-          <view class="musicItem" wx:for="{{item.tracks}}" wx:key="id" wx:for-item="musicItem">
-            <image src="{{musicItem.al.picUrl}}"></image>
-            <text class="count">{{index+1}}</text>
-            <text class="musicName">{{musicItem.name}}</text>
-          </view>
+          <scroll-view class="scroll-y" scroll-y="true">
+            <view class="musicItem" 
+             wx:for="{{item.tracks}}"
+             wx:key="id" 
+             wx:for-item="musicItem" 
+             data-index='{{index}}'
+             data-song='{{musicItem}}'
+             bindtap="toIndexSongDetail"
+             >
+              <image src="{{musicItem.al.picUrl}}"></image>
+              <text class="count">{{index+1}}</text>
+              <text class="musicName">{{musicItem.name}}</text>
+            </view>
+          </scroll-view>
         </view>
       </swiper-item>
     </swiper>

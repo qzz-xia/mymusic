@@ -1,4 +1,4 @@
-/* pages/songDetail/songDetail.wxss */
+/* pages/indexSongDetail/indexSongDetail.wxss */
 .songDetailContainer{
     height: 100%;
     display: flex;
@@ -111,11 +111,10 @@
     line-height: 80rpx;
     display: flex;
 }
+  
 .progressControl text{
     color: #fff;
 }
-  
-  
 .barControl {
     position: relative;
     width: 450rpx;
