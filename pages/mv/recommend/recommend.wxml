@@ -1,11 +1,11 @@
 <!--pages/mv/recommend/recommend.wxml-->
 <view class="remd_mv">
     <view class="remd_ul">
-        <navigator url="/pages/mv/detail/detail?id={{item.id}}"  class="remd_li" wx:for="{{list}}" wx:key="id">
+        <view class="remd_li" wx:for="{{recommendList}}" wx:key="id" data-id="{{item.id}}" bindtap="goDetail">
             <view class="img-box">
-                <image mode="widthFix" src="{{item.cover}}"></image>
+                <image src="{{item.cover}}"></image>
             </view>
-        <view class="remd_text">{{item.name}}</view>
-        </navigator>
+            <text class="remd_text">{{item.name}}</text>
+        </view>
     </view>
 </view>

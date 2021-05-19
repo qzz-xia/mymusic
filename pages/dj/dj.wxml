@@ -1,0 +1,10 @@
+<!--pages/dj/dj.wxml-->
+<view class="">
+    <!-- 轮播图 -->
+    <swiper class="banners" indicator-dots="true" indicator-color="ivory" indicator-active-color="#d43c33">
+        <swiper-item wx:for="{{bannerList}}" wx:key="bannerId">
+        <image src="{{item.pic}}"></image>
+        </swiper-item>
+    </swiper>
+</view>
+

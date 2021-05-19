@@ -1,7 +1,11 @@
 {
   "pages": [
+    "pages/dj/dj",
     "pages/index/index",
+    "pages/list/list",
+    "pages/listDetail/listDetail",
     "pages/mv/recommend/recommend",
+    "pages/playlist/playlist",
     "pages/rigister/rigister",
     "pages/personal/personal",
     "pages/recommendSong/recommendSong",
@@ -9,8 +13,7 @@
     "pages/search/search",
     "pages/video/video",
     "pages/login/login",
-    "pages/mv/detail/detail",
-    "pages/indexSongDetail/indexSongDetail"
+    "pages/mv/detail/detail"
   ],
   "style": "v2",
   "sitemapLocation": "sitemap.json",

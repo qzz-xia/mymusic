@@ -1,56 +1,43 @@
-// pages/recommendSong/recommendSong.js
+// pages/playlist/playlist.js
 import request from '../../utils/request'
+// 获取全局实例
+const appInstance = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    day: '', // 天
-    month: '', // 月
-    year:'',//年
-    recommendList: [], // 推荐列表数据
     index: 0, // 点击音乐的下标
+    recommendList:[],// 推荐歌单数据
+    songListId:'',//歌单id
+    songList:'',//歌单数据
+    songPic:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    // 判断用户是否登录
-    let userInfo = wx.getStorageSync('userInfo');
-    if(!userInfo){
-      wx.showToast({
-        title: '请先登录',
-        icon: 'none',
-        success: () => {
-          // 跳转至登录界面
-          wx.reLaunch({
-            url: '/pages/login/login'
-          })
-        }
-      })
-    }
-    // 更新日期的状态数据
+  onLoad: async function (options) {
+    // 跳转传参，接收index传过来的歌单ID
+    let data = options.data
+    // console.log('recommendListId=',data)
+
+    // 获取推荐歌单数据
+
+    let songListData = await request('/playlist/detail',{id:data})
+    
+    // console.log(songListData)
+    // console.log(songListData.playlist.tracks)
+    // console.log(songListData.playlist.coverImgUrl)
     this.setData({
-      day: new Date().getDate(),
-      month: new Date().getMonth() + 1,
-      year: new Date().getFullYear()
-    })
-  
-    // 获取每日推荐的数据
-    this.getRecommendList()
-  },
-  
-  // 获取用户每日推荐数据
-  async getRecommendList(){
-    let recommendListData = await request('/recommend/songs')
-    this.setData({
-      recommendList: recommendListData.recommend
+      songList:songListData.playlist.tracks,
+      songPic:songListData.playlist,
+      // recommendList: recommendListData.result
     })
   },
-  
-  // 跳转至songDetail页面
+
+  // 跳转到songDetail
   toSongDetail(event){
     let {song, index} = event.currentTarget.dataset
 
@@ -64,6 +51,7 @@ Page({
       url: '/pages/songDetail/songDetail?musicId=' + song.id
     })
   },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成

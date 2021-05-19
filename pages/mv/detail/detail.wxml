@@ -1,6 +1,6 @@
 <!--pages/mv/detail/detail.wxml-->
 <view class="m-mv">
-    <video id="myVideo" class="video" src="{{mv_url}}" ></video>
+    <video id="myVideo" class="video" src="{{mvUrl.url}}" ></video>
     <view class="m-titlemv">
         <view class="tt">
             <view class="name f-brk">
@@ -8,17 +8,30 @@
             </view>
         </view>
         <view class="singer" >
-            歌手：<text wx:for="{{artists}}" wx:key="id" data-id="{{item.id}}">{{item.name}}-</text>
+            歌手:<text data-id="{{mvList.id}}">{{mvList.artistName}}</text>
         </view>
 
         <view class="info">
-            <view class="time">发布时间：{{publishTime}}</view>
+            <view class="time">发布时间：{{mvList.publishTime}}</view>
             <view class="played">
-                播放：{{playCount}}
+                播放：{{mvList.playCount}}
             </view>
         </view>
         <view class="intrmv">
-            {{desc}}
+            {{mvList.desc}}
+        </view>
+    </view>
+
+    <!-- 相似mv -->
+    <view class="remd_mv">
+        <text>相似mv:</text>
+        <view class="remd_ul">
+            <view class="remd_li" wx:for="{{simiList}}" wx:key="id" data-id="{{item.id}}" bindtap="goDetail">
+                <view class="img-box">
+                    <image src="{{item.cover}}"></image>
+                </view>
+                <text class="remd_text">{{item.name}}</text>
+            </view>
         </view>
     </view>
 </view>

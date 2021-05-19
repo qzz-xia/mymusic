@@ -1,15 +1,8 @@
-<!--pages/recommendSong/recommendSong.wxml-->
+<!--pages/playlist/playlist.wxml-->
 <view class="recommendSongContainer">
     <!-- 头部区域 -->
     <view class="header">
-        <image src="/static/images/recommendSong/bg1.jpg"></image>
-        <view class="date">
-            <!-- <text class="year">{{year}}/</text> -->
-            
-            <text class="day">{{day}}</text>
-
-            <text class="month">/{{'0'+month}}</text>
-        </view>
+        <image src="{{songPic.coverImgUrl}}"></image>
     </view>
 
     <!-- 列表区域 -->
@@ -22,16 +15,16 @@
         <!-- 内容区 -->
         <scroll-view scroll-y class='listScroll'>
             <view class="scrollItem" 
-             wx:for="{{recommendList}}" 
+             wx:for="{{songList}}" 
              wx:key="id" 
              data-index="{{index}}" 
              data-song='{{item}}' 
              bindtap="toSongDetail"
              >
-                <image src="{{item.album.picUrl}}"></image>
+                <image src="{{item.al.picUrl}}"></image>
                 <view class="musicInfo">
                     <text class="musicName">{{item.name}}</text>
-                    <text class="author">{{item.artists[0].name}}</text>
+                    <text class="author">{{item.ar[0].name}}</text>
                     <text class="iconfont icon-icon-gengduo"></text>
                 </view>
             </view>

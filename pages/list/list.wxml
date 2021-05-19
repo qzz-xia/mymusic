@@ -1,0 +1,7 @@
+<!--pages/list/list.wxml-->
+<view class="recommendContainer">
+    <view class="scrollItem" wx:for="{{list}}" wx:key="id" data-id="{{item.id}}" bindtap="goListDetail">
+        <image src="{{item.coverImgUrl}}"></image>
+        <text>{{item.name}}</text>
+    </view>
+</view>

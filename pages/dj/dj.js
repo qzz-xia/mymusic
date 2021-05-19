@@ -1,41 +1,27 @@
-// pages/mv/recommend/recommend.js
-import request from '../../../utils/request'
+// pages/dj/dj.js
+import request from '../../utils/request'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    recommendList:[]
+    bannerList:[],//轮播图
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   
-    // 获取最新mv
-    this.getMv()
+     // 得到轮播图
+     this.getBanner()
   },
 
-  // 获取最新mv
-  async getMv(){
-    let recommendListData = await request('/mv/first')
-    // console.log(recommendListData.data)
-    // console.log(recommendListData.data[0].id)
+  // 得到轮播图
+  async getBanner(){
+    let bannerListData = await request('/dj/banner')
     this.setData({
-      recommendList:recommendListData.data,
-    })
-  },
-
-  // 跳转到detail
-  goDetail(event){
-    // 跳转传参，传mvid给detail
-    // console.log(event.currentTarget.dataset.id)
-    let mvId = event.currentTarget.dataset.id
-    // console.log(mvId)
-    wx.navigateTo({
-      url: '/pages/mv/detail/detail?data=' + mvId
+      bannerList:bannerListData.data
     })
   },
 

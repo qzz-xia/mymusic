@@ -1,38 +1,15 @@
-/* pages/recommendSong/recommendSong.wxss */
-
+/* pages/playlist/playlist.wxss */
 .recommendSongContainer .header{
     position: relative;
     width: 100%;
-    height: 300rpx;
+    height: 550rpx;
 }
 .recommendSongContainer .header image{
     margin: auto;
     width: 100%;
-    height: 800rpx;
-    max-width: 100%;
+    /* height: 800rpx; */
+    /* max-width: 100%; */
 }
-.recommendSongContainer .header .date{
-    position: absolute;
-    left: 120rpx;
-    top: 200rpx;
-    margin-left: -140rpx;
-    margin-top: -30rpx;
-
-    width: 300rpx;
-    height: 100rpx;
-    text-align: center;
-    line-height: 100rpx;
-    color: white;
-    font-size: 60rpx;
-    /* background: rgba(0, 0, 0, 0.1); */
-    border-radius: 30rpx;
-    /* font-family: Georgia, 'Times New Roman', Times, serif; */
-}
-.recommendSongContainer .header .date .day{
-    font-size: 100rpx;
-    font-weight: 1000;
-}
-
 /* 列表区域 */
 .listContainer{
     position: relative;

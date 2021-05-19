@@ -13,6 +13,10 @@
         <image class="musicImg" src="{{song.al.picUrl}}" />
     </view>
 
+    <!-- 底部实时歌词 -->
+    <view class="scrollLrc" hidden="{{shows}}">
+        <text>{{currentLyric}}</text>
+    </view>
     <!-- 进度条控制区域 -->
     <view class="progressControl" hidden="{{shows}}">
         <text>{{currentTime}}</text>
@@ -35,93 +39,14 @@
 
         <text class="iconfont {{isPlay?'icon-suspend': 'icon-zanting'}} big" bindtap="handleMusicPlay"></text>
 
-        <text class="iconfont icon-xiayiqu" id="next"></text>
+        <text class="iconfont icon-xiayiqu"></text>
 
-        <text class="iconfont icon-gecishezhi_" bindtap="showWord"></text>
+        <text class="iconfont {{isPlay?'icon-ci1':'icon-ci'}}" bindtap="showWord"></text>    </view>
+    <view class="musicWord" hidden="{{showsWord}}">
+        <!-- 当wx:for遍历对象时，wx:for-index会得到对象的key，wx:for-item会得到对象的value -->
+        <text wx:for="{{musicWordList}}" wx:for-item="value" wx:key="id">
+            {{value}}
+        </text>
     </view> 
 </view>
-<view class="musicWord" hidden="{{showsWord}}">
-     <text>
-        {{musicWordList[0]}}
-        \n{{musicWordList[1]}}
-        \n{{musicWordList[2]}}
-        \n{{musicWordList[3]}}
-        \n{{musicWordList[4]}}
-        \n{{musicWordList[5]}}
-        \n{{musicWordList[6]}}
-        \n{{musicWordList[7]}}
-        \n{{musicWordList[8]}}
-        \n{{musicWordList[9]}}
-        \n{{musicWordList[10]}}
-        \n{{musicWordList[11]}}
-        \n{{musicWordList[12]}}
-        \n{{musicWordList[13]}}
-        \n{{musicWordList[14]}}
-        \n{{musicWordList[15]}}
-        \n{{musicWordList[16]}}
-        \n{{musicWordList[17]}}
-        \n{{musicWordList[18]}}
-        \n{{musicWordList[19]}}
-        \n{{musicWordList[20]}}
-        \n{{musicWordList[21]}}
-        \n{{musicWordList[22]}}
-        \n{{musicWordList[23]}}
-        \n{{musicWordList[24]}}
-        \n{{musicWordList[25]}}
-        \n{{musicWordList[26]}}
-        \n{{musicWordList[27]}}
-        \n{{musicWordList[28]}}
-        \n{{musicWordList[29]}}
-        \n{{musicWordList[30]}}
-        \n{{musicWordList[31]}}
-        \n{{musicWordList[32]}}
-        \n{{musicWordList[33]}}
-        \n{{musicWordList[34]}}
-        \n{{musicWordList[35]}}
-        \n{{musicWordList[36]}}
-        \n{{musicWordList[37]}}
-        \n{{musicWordList[38]}}
-        \n{{musicWordList[39]}}
-        \n{{musicWordList[40]}}
-        \n{{musicWordList[41]}}
-        \n{{musicWordList[42]}}
-        \n{{musicWordList[43]}}
-        \n{{musicWordList[44]}}
-        \n{{musicWordList[45]}}
-        \n{{musicWordList[46]}}
-        \n{{musicWordList[47]}}
-        \n{{musicWordList[48]}}
-        \n{{musicWordList[49]}}
-        \n{{musicWordList[50]}}
-        \n{{musicWordList[51]}}
-        \n{{musicWordList[52]}}
-        \n{{musicWordList[53]}}
-        \n{{musicWordList[54]}}
-        \n{{musicWordList[55]}}
-        \n{{musicWordList[56]}}
-        \n{{musicWordList[57]}}
-        \n{{musicWordList[58]}}
-        \n{{musicWordList[59]}}
-        \n{{musicWordList[60]}}
-        \n{{musicWordList[61]}}
-        \n{{musicWordList[62]}}
-        \n{{musicWordList[63]}}
-        \n{{musicWordList[64]}}
-        \n{{musicWordList[65]}}
-        \n{{musicWordList[66]}}
-        \n{{musicWordList[67]}}
-        \n{{musicWordList[68]}}
-        \n{{musicWordList[69]}}
-        \n{{musicWordList[70]}}
-        \n{{musicWordList[71]}}
-        \n{{musicWordList[72]}}
-        \n{{musicWordList[73]}}
-        \n{{musicWordList[74]}}
-        \n{{musicWordList[75]}}
-        \n{{musicWordList[76]}}
-        \n{{musicWordList[77]}}
-        \n{{musicWordList[78]}}
-        \n{{musicWordList[79]}}
-        \n{{musicWordList[80]}}
-    </text>
-</view>
+

@@ -12,11 +12,6 @@
   border: 4px solid #eee;
   border-radius: 20rpx;
   margin: 0 20rpx;
-  /*flex-grow: 可拉伸 flex-shrink： 可压缩 flex-basis: 当前元素的宽度*/
-  /*flex默认值: flex-grow: 0, flex-shrink: 1, flex-basis: auto*/
-  /*flex:1  flex-grow: 1, flex-shrink: 1, flex-basis: 0%*/
-  /*flex:auto  flex-grow: 1, flex-shrink: 1, flex-basis: auto*/
-  /*flex: 1会导致父元素宽度自动为100%*/
   flex: 1;
   font-size: 26rpx;
   text-align: center;
@@ -62,7 +57,9 @@
 .navItem .icon-MV-wangyiicon{
   font-size: 70rpx;
 }
-
+.navItem .icon-gedan{
+  font-size: 100rpx;
+}
 .navItem text{
   font-size: 26rpx;
 }
@@ -108,7 +105,7 @@
   padding: 20rpx;
 }
 .topListSwiper{
-  height: 420rpx;
+  height: 550rpx;
 }
 .scroll-y{
   height: 480rpx;
@@ -126,6 +123,9 @@
   /* 当一个元素设置为flex，其子元素会自动生成为lock元素 */
   display: flex;
   margin-bottom: 20rpx;
+  box-shadow: 5rpx 6rpx 5rpx 5rpx #818585;
+  border-radius: 10rpx;
+  width: 94%;
 }
 .musicItem image{
   width: 100rpx;

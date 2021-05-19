@@ -3,6 +3,7 @@ App({
   globalData:{
     isMusicPlay:false,// 是否有音乐播放
     musicId:'',// 音乐id
+    playListId:''//歌单id
   },
 
   /**

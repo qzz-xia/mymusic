@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 2538611 */
-  src: url('//at.alicdn.com/t/font_2538611_72bmjhkr022.woff2?t=1620636459861') format('woff2'),
-       url('//at.alicdn.com/t/font_2538611_72bmjhkr022.woff?t=1620636459861') format('woff'),
-       url('//at.alicdn.com/t/font_2538611_72bmjhkr022.ttf?t=1620636459861') format('truetype');
+  src: url('//at.alicdn.com/t/font_2538611_dcl4gvgvbds.woff2?t=1621431837416') format('woff2'),
+       url('//at.alicdn.com/t/font_2538611_dcl4gvgvbds.woff?t=1621431837416') format('woff'),
+       url('//at.alicdn.com/t/font_2538611_dcl4gvgvbds.ttf?t=1621431837416') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,34 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-diantai1:before {
+  content: "\e60b";
+}
+
+.icon-gedan:before {
+  content: "\e609";
+}
+
+.icon-liebiao:before {
+  content: "\e608";
+}
+
+.icon-ci:before {
+  content: "\e606";
+}
+
+.icon-geci:before {
+  content: "\e844";
+}
+
+.icon-dongtaigeci:before {
+  content: "\e6ff";
+}
+
+.icon-ci1:before {
+  content: "\e607";
 }
 
 .icon-icon-pinglun:before {

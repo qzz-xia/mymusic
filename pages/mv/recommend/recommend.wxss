@@ -2,16 +2,12 @@
 view,navigator{
     box-sizing: border-box;
 }
-image{
-    width: 100%;
-    border-radius: 10rpx;
-}
 .remd_mv {
     overflow: hidden;
     padding: 0 20rpx;
 }
 .remd_mv .remd_ul {
-    margin: 5rpx 0 -4rpx;
+    margin: 40rpx 0 0 -4rpx;
     display: flex;
     flex-flow: row wrap;
     
@@ -20,6 +16,11 @@ image{
     flex: 0 0 33.33%;
     padding: 0 15rpx;
     margin-bottom: 32rpx;
+}
+.remd_mv .remd_ul .remd_li .img-box image{
+    width: 100%;
+    border-radius: 10rpx;
+    height: 160rpx;
 }
 .remd_mv .remd_ul .remd_li .remd_text {
     display: -webkit-box;

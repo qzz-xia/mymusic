@@ -1,0 +1,24 @@
+/* pages/list/list.wxss */
+.recommendContainer{
+  padding: 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.scrollItem{
+  width: 200rpx;
+  margin-right: 20rpx;
+  padding-right: 20rpx;
+}
+.scrollItem image{
+  width: 225rpx;
+  height: 225rpx;
+  border-radius: 10rpx;
+}
+.scrollItem text{
+  font-size: 26rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical; /*设置对齐模式*/
+  -webkit-line-clamp: 2; /*设置多行的行数*/
+}

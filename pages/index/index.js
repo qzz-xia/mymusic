@@ -24,7 +24,8 @@ Page({
     })
 
     // 获取推荐歌单数据
-    let recommendListData = await request('/personalized',{limit:10})
+    let recommendListData = await request('/personalized',{limit:20})
+    // console.log(recommendListData)
     this.setData({
       recommendList: recommendListData.result
     })
@@ -35,25 +36,50 @@ Page({
      *  1.需要根据idx的值获取对应的数据
      *  2.idx的取值范围是0-20
      */
-    let index = 0
+    let idx = 0
     let resultArr = []
-    while(index < 4){
-      index++
-      let topListData = await request('/top/list',{idx:index++})
+    while(idx < 10){
+      idx++
+      let topListData = await request('/top/list',{idx:idx++})
+      // console.log(idx)
       // splice(会修改原数组，，可以对指定的数组进行增删改) slice(不会修改原数组)
-      let topListItem = {name:topListData.playlist.name, tracks:topListData.playlist.tracks.slice(0,21)}
+      let topListItem = {name:topListData.playlist.name, tracks:topListData.playlist.tracks.slice(0,20)}
+
       resultArr.push(topListItem)
       // console.log(resultArr)
+
       // 不需要等待五次请求全部结束才更新，用户体验好,但是渲染次数会多一些
       this.setData({
         topList: resultArr
       })
+
     }
     // 更新topList的状态值,放在此处更新会导致发送请求的过程中页面长时间白屏，用户体验差
     // this.setData({
     //   topList: resultArr
     // })
 
+   
+  },
+
+  // 跳转到list页面
+  goList(){
+    wx.navigateTo({
+      url: '/pages/list/list'
+    })
+  },
+
+   // 跳转至playlist页面
+  goPlayList(event){
+    // 跳转传参，传歌单ID给playlist
+    
+    // console.log(event.currentTarget.dataset.id)
+    let recommendListId = event.currentTarget.dataset.id
+    // console.log(recommendListId)
+    
+    wx.navigateTo({
+      url: '/pages/playlist/playlist?data=' + recommendListId
+    })
   },
 
   // 跳转至recommendSong页面
@@ -77,8 +103,8 @@ Page({
     })
   },
 
-  // 跳转到IndexSongDetail
-  toIndexSongDetail(event){
+  // 跳转到songDetail
+  toSongDetail(event){
     let {song,index} = event.currentTarget.dataset
     // let index = event.currentTarget.dataset.index
     this.setData({
@@ -92,8 +118,8 @@ Page({
     // 路由跳转传参：query参数
     wx.navigateTo({
       // 不能直接将song对象作为参数传递，长度过长，会被自动截取掉
-      // url: '/pages/indexSongDetail/indexSongDetail?song=' + JSON.stringify(song)
-      url: '/pages/indexSongDetail/indexSongDetail?musicId=' + song.id
+      // url: '/pages/songDetail/songDetail?song=' + JSON.stringify(song)
+      url: '/pages/songDetail/songDetail?musicId=' + song.id
     })
   },
 

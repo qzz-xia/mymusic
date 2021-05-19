@@ -1,41 +1,44 @@
-// pages/mv/recommend/recommend.js
-import request from '../../../utils/request'
+// pages/listDetail/listDetail.js
+import request from '../../utils/request'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    recommendList:[]
+    listname:[],//歌单
+    listId:'',//歌单id
+    listItem:[],//歌单数据
+    List:[],//歌单列表
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-   
-    // 获取最新mv
-    this.getMv()
-  },
+  onLoad: async function (options) {
+    // 接收来自list的id
+    // console.log(options.listId)
+    let listId = options.listId
 
-  // 获取最新mv
-  async getMv(){
-    let recommendListData = await request('/mv/first')
-    // console.log(recommendListData.data)
-    // console.log(recommendListData.data[0].id)
+    // 获取精品歌单详情
+    let listItemData = await request('/playlist/detail',{id:listId})
+  
+    let ListData = listItemData.playlist.tracks
+    // console.log(ListData)
+
     this.setData({
-      recommendList:recommendListData.data,
+      listItem:listItemData.playlist,
+      List:ListData
     })
   },
 
-  // 跳转到detail
-  goDetail(event){
-    // 跳转传参，传mvid给detail
+  // 跳转到songDetail页面
+  goSongDetail(event){
+    // 把歌曲id传给songDetail
     // console.log(event.currentTarget.dataset.id)
-    let mvId = event.currentTarget.dataset.id
-    // console.log(mvId)
+    let musicId = event.currentTarget.dataset.id
     wx.navigateTo({
-      url: '/pages/mv/detail/detail?data=' + mvId
+      url: '/pages/songDetail/songDetail?musicId=' + musicId
     })
   },
 

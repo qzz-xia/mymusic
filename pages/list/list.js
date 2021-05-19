@@ -1,41 +1,32 @@
-// pages/mv/recommend/recommend.js
-import request from '../../../utils/request'
+// pages/list/list.js
+import request from '../../utils/request'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    recommendList:[]
+    list:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-   
-    // 获取最新mv
-    this.getMv()
-  },
-
-  // 获取最新mv
-  async getMv(){
-    let recommendListData = await request('/mv/first')
-    // console.log(recommendListData.data)
-    // console.log(recommendListData.data[0].id)
+  onLoad: async function (options) {
+    // 得到歌单数据
+    let listData = await request('/top/playlist/highquality')
+    // console.log(listData)
     this.setData({
-      recommendList:recommendListData.data,
+      list:listData.playlists
     })
   },
 
-  // 跳转到detail
-  goDetail(event){
-    // 跳转传参，传mvid给detail
+  // 跳转到listDetail
+  goListDetail(event){
     // console.log(event.currentTarget.dataset.id)
-    let mvId = event.currentTarget.dataset.id
-    // console.log(mvId)
+    let listId = event.currentTarget.dataset.id
     wx.navigateTo({
-      url: '/pages/mv/detail/detail?data=' + mvId
+      url: '/pages/listDetail/listDetail?listId=' + listId
     })
   },
 
