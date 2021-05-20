@@ -29,7 +29,6 @@ Page({
    */
   onLoad: function (options) {
     // option 接收路由跳转的路由参数
-    // 原生小程序中路由传参，对参数的长度有限制，如果参数长度过长会自动截取掉
     // console.log(typeof options.song)
     // console.log(options.song)
     // console.log(JSON.parse(options.song))
@@ -47,13 +46,8 @@ Page({
     // 获取歌词
     this.getMusicWord(musicId)
 
-    /*
-    * 问题： 如果用户操作系统的控制音乐播放/暂停的按钮，页面不知道，导致页面显示是否播放的状态和真实的音乐播放状态不一致
-    * 解决方案：
-    *   1. 通过控制音频的实例 backgroundAudioManager 去监视音乐播放/暂停
-    *
-    * */
-
+   
+    // 通过控制音频的实例 backgroundAudioManager 去监视音乐播放/暂停
     // 判断当前页面音乐是否在播放
     if(appInstance.globalData.isMusicPlay && appInstance.globalData.musicId === musicId){
       // 修改当前页面音乐播放状态为true
@@ -132,11 +126,7 @@ Page({
   // 点击播放暂停的回调
   handleMusicPlay(){
     let isPlay = !this.data.isPlay
-    // 修改是否播放的状态
-    // this.setData({
-    //   isPlay
-    // })
-
+  
     let {musicId,musicLink} = this.data
     // 控制音乐播放/暂停的功能函数
     this.musicControl(isPlay,musicId,musicLink)

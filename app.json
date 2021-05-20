@@ -1,8 +1,8 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/singer/index/index",
     "pages/dj/index/index",
-   
     "pages/list/list",
     "pages/listDetail/listDetail",
     "pages/mv/recommend/recommend",
@@ -15,7 +15,8 @@
     "pages/video/video",
     "pages/login/login",
     "pages/mv/detail/detail",
-    "pages/dj/detail/detail"
+    "pages/dj/detail/detail",
+    "pages/singer/detail/detail"
   ],
   "style": "v2",
   "sitemapLocation": "sitemap.json",
@@ -32,8 +33,8 @@
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath": "/static/images/tabs/tab-home.png",
-        "selectedIconPath": "/static/images/tabs/tab-home-current.png"
+        "iconPath": "/static/images/tabs/index.png",
+        "selectedIconPath": "/static/images/tabs/indexed.png"
       },
       {
         "pagePath": "pages/video/video",
@@ -42,10 +43,16 @@
         "selectedIconPath": "/static/images/tabs/videoed.png"
       },
       {
+        "pagePath": "pages/singer/index/index",
+        "text": "歌手",
+        "iconPath": "/static/images/tabs/singer.png",
+        "selectedIconPath": "/static/images/tabs/singered.png"
+      },
+      {
         "pagePath": "pages/personal/personal",
-        "text": "个人中心",
-        "iconPath": "/static/images/tabs/tab-my.png",
-        "selectedIconPath": "/static/images/tabs/tab-my-current.png"
+        "text": "我的",
+        "iconPath": "/static/images/tabs/my.png",
+        "selectedIconPath": "/static/images/tabs/myed.png"
       }
     ]
   },

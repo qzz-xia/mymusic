@@ -1,0 +1,73 @@
+/* pages/singer/detail/detail.wxss */
+.video {
+    width: 100%;
+  }
+  .m-titlemv {
+    padding: 15px 10px 12px;
+  }
+  .m-titlemv .singer {
+    display: inline-block;
+    margin: 11px 0 10px;
+    color: #507daf;
+    font-size: 13px;
+    line-height: 14px;
+  }
+  .m-titlemv .info {
+    font-size: 13px;
+    color: #999;
+    display: flex;
+  }
+  .m-titlemv .info .time {
+    flex: 1;
+    font-size: 35rpx;
+    font-weight: 600;
+  }
+  .m-titlemv .intrmv {
+    margin: 0;
+    padding-top: 5px;
+    color: #666;
+    font-size: 13px;
+    line-height: 20px;
+  
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;/*行数*/
+  }
+  
+  /* 相似mv */
+  view,navigator{
+    box-sizing: border-box;
+  }
+  .remd_mv {
+    overflow: hidden;
+    padding: 0 20rpx;
+  }
+  .remd_mv .remd_ul {
+    margin: 5rpx 0 -4rpx;
+    display: flex;
+    flex-flow: row wrap;
+    
+  }
+  .remd_mv .remd_ul .remd_li {
+    flex: 0 0 33.33%;
+    padding: 0 15rpx;
+    margin-bottom: 32rpx;
+  }
+  .remd_mv .remd_ul .remd_li .img-box image{
+    width: 100%;
+    border-radius: 10rpx;
+    height: 200rpx;
+  }
+  .remd_mv .remd_ul .remd_li .remd_text {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    padding-top: 12rpx;
+    min-height: 60rpx;
+    line-height: 1.2;
+    font-size: 26rpx;
+    word-break: break-all;
+  }
+  

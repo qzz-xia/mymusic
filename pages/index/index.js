@@ -31,11 +31,7 @@ Page({
     })
 
     // 获取排行榜数据
-    /**
-     * 需求分析：
-     *  1.需要根据idx的值获取对应的数据
-     *  2.idx的取值范围是0-20
-     */
+    // idx的取值范围是0-20
     let idx = 0
     let resultArr = []
     while(idx < 10){
@@ -48,13 +44,11 @@ Page({
       resultArr.push(topListItem)
       // console.log(resultArr)
 
-      // 不需要等待五次请求全部结束才更新，用户体验好,但是渲染次数会多一些
       this.setData({
         topList: resultArr
       })
 
     }
-    // 更新topList的状态值,放在此处更新会导致发送请求的过程中页面长时间白屏，用户体验差
     // this.setData({
     //   topList: resultArr
     // })
@@ -62,7 +56,7 @@ Page({
    
   },
 
-  // 跳抓到dj页面
+  // 跳转到dj页面
   goDj(){
     wx.navigateTo({
       url: '/pages/dj/index/index'
@@ -117,15 +111,9 @@ Page({
     this.setData({
       index
     })
-    
-    // this.setData({
-    //   index
-    // })
 
     // 路由跳转传参：query参数
     wx.navigateTo({
-      // 不能直接将song对象作为参数传递，长度过长，会被自动截取掉
-      // url: '/pages/songDetail/songDetail?song=' + JSON.stringify(song)
       url: '/pages/songDetail/songDetail?musicId=' + song.id
     })
   },

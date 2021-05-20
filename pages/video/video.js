@@ -95,31 +95,10 @@ Page({
 
   // 点击播放/继续播放的回调 
   handlePlay(event){
-    // console.log('play()')
-    /**
-     * 问题：多个视频同时播放的问题
-     * 需求：
-     * 1.在点击播放的事件中需要找到上一个播放的视频
-     * 2.在播放新的视频之前关闭上一个正在播放的视频
-     * 关键：
-     * 1.如何找到上一个视频的实例对象
-     * 2.如何确认点击播放的视频和正在播放的视频不是同一个视频
-     * 单例模式：
-     * 1.需要创建多个对象的场景下，通过一个变量接收，始终保持只有一个对象
-     * 2.节省内存空间
-    */
+   // console.log('play()')
+  
    let vid = event.currentTarget.id
-   // 关闭上一个播放的视频
-   // this.vid !==vid && this.videoContext && this.videoContext.stop()
-
-
-  //  if (this.vid !== vid) {
-  //    if (this.videoContext) {
-  //      this.videoContext.stop()
-  //    }
-  //  }
-  //  this.vid = vid
-
+  
   //  更新data中videoId的状态数据
    this.setData({
      videoId:vid
@@ -142,11 +121,9 @@ Page({
     // console.log(event)
     let videoTimeObj = {vid:event.currentTarget.id, currentTime:event.detail.currentTime}
     let {videoUpdateTime} = this.data
-    /**
-     * 思路：判断记录播放时长的videoUpdateTime数组中是否有当前视屏的的播放记录
-     * 1.有，在原有的播放记录中修改播放时间为当前的播放时间
-     * 2.没有，需要在数组中添加当前视屏的播放对象
-     */
+
+    // 判断记录播放时长的videoUpdateTime数组中是否有当前视屏的的播放记录
+    
     let videoItem = videoUpdateTime.find(item => item.vid === videoTimeObj.vid)
     if (videoItem) {// 有
       videoItem.currentTime = event.detail.currentTime

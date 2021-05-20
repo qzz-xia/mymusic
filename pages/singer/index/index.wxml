@@ -1,0 +1,27 @@
+<!--pages/singer/index/index.wxml-->
+<view class="singerContainer">
+    <view class="searchContainer">
+    <!-- 头部搜索区域 -->
+    <view class="header">
+        <view class="searchInput">
+            <text class="iconfont icon-sousuo1"></text>
+            <input type="text"/>
+        </view>
+    </view>
+    </view>
+
+    <view 
+     class="singerList" 
+     wx:for="{{singerList}}" 
+     wx:key="id" 
+     data-id="{{item.id}}" 
+     data-pic="{{item.picUrl}}" 
+     bindtap="goDetail"
+    >
+        <view class="list">
+            <image class="img" src="{{item.picUrl}}"></image>
+            <text class="name">{{item.name}}</text>
+            <view class="look">+关注</view>
+        </view>
+    </view>
+</view>

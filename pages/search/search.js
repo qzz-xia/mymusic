@@ -71,7 +71,7 @@ Page({
     }
     isSend = true
     this.getSearchList()
-    // 函数节流
+    
     setTimeout(()=>{
       isSend = false
     },300)

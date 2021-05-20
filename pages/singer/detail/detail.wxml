@@ -1,0 +1,24 @@
+<!--pages/singer/detail/detail.wxml-->
+<view class="m-mv">
+    <image class="video" src="{{singerPic}}" ></image>
+    <view class="m-titlemv">
+        <view class="info">
+            <view class="time">歌手：{{songList[0].ar[0].name}}</view>
+        </view>
+        <view class="intrmv">
+            {{listItem.description}}
+        </view>
+    </view>
+
+    <view class="remd_mv">
+        <text>歌曲列表:</text>
+        <view class="remd_ul">
+            <view class="remd_li" wx:for="{{songList}}" wx:key="id" data-id="{{item.id}}" bindtap="goSongDetail" >
+                <view class="img-box">
+                    <image src="{{item.al.picUrl}}"></image>
+                </view>
+                <text class="remd_text">{{item.name}}</text>
+            </view>
+        </view>
+    </view>
+</view>

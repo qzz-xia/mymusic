@@ -86,12 +86,6 @@
 }
 .scrollItem text{
   font-size: 26rpx;
-  /* 单行文本溢出隐藏 省略号代替*/
-  /* display: block;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis; */
-
   /* 多行文本溢出隐藏 省略号代替 */
   overflow: hidden;
   text-overflow: ellipsis;
