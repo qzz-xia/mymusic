@@ -62,6 +62,13 @@ Page({
    
   },
 
+  // 跳抓到dj页面
+  goDj(){
+    wx.navigateTo({
+      url: '/pages/dj/index/index'
+    })
+  },
+
   // 跳转到list页面
   goList(){
     wx.navigateTo({

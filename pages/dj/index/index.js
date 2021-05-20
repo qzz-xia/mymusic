@@ -1,5 +1,5 @@
-// pages/dj/dj.js
-import request from '../../utils/request'
+// pages/dj/index/index.js
+import request from '../../../utils/request'
 Page({
 
   /**
@@ -7,14 +7,18 @@ Page({
    */
   data: {
     bannerList:[],//轮播图
+    djRecommend:[],//电台列表
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-     // 得到轮播图
-     this.getBanner()
+    // 得到轮播图
+    this.getBanner()
+
+    // 得到电台列表
+    this.getDjRecommend()     
   },
 
   // 得到轮播图
@@ -22,6 +26,24 @@ Page({
     let bannerListData = await request('/dj/banner')
     this.setData({
       bannerList:bannerListData.data
+    })
+  },
+
+  // 得到电台列表
+  async getDjRecommend(){
+    let djRecommendData = await request('/dj/recommend')
+    // console.log(djRecommendData)
+    this.setData({
+      djRecommend:djRecommendData.djRadios
+    })
+  },
+
+  // 跳转到detail
+  goDetail(event){
+    // console.log(event.currentTarget.dataset.id)
+    let recommendId = event.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '/pages/dj/detail/detail?recommendId=' + recommendId
     })
   },
 

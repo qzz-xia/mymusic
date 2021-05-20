@@ -1,0 +1,36 @@
+<!--pages/dj/detail/detail.wxml-->
+<view class="m-mv">
+    <image class="video" src="{{detailList.dj.avatarUrl}}" ></image>
+    <view class="m-titlemv">
+        <view class="tt">
+            <view class="name f-brk">
+                <text>{{detailList.dj.nickname}}</text>
+            </view>
+        </view>
+
+        <view class="info">
+            <view class="time" >
+                简介：{{detailList.dj.signature}}
+            </view>
+        </view>
+        <view class="intrmv">
+            {{listItem.description}}
+        </view>
+    </view>
+
+    <view class="remd_mv">
+        <text>电台列表:</text>
+        <view class="remd_ul">
+            <view class="remd_li" wx:for="{{djList}}" wx:key="id" data-id="{{item.mainSong.id}}" bindtap="getAudio">
+                <audio 
+                 class="audio"
+                 src="{{audioList.url}}" 
+                 poster="{{item.coverUrl}}" 
+                 name="{{item.name}}" 
+                 author="{{detailList.dj.nickname}}" 
+                 controls="{{true}}">
+                </audio>
+            </view>
+        </view>
+    </view>
+</view>

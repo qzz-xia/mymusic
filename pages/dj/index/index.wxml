@@ -1,0 +1,18 @@
+<!--pages/dj/index/index.wxml-->
+<view class="">
+    <!-- 轮播图 -->
+    <swiper class="banners" indicator-dots="true" indicator-color="ivory" indicator-active-color="#d43c33">
+        <swiper-item wx:for="{{bannerList}}" wx:key="bannerId">
+        <image src="{{item.pic}}"></image>
+        </swiper-item>
+    </swiper>
+    <!-- 推荐电台 -->
+    <view class="recommendContainer">
+        <view class="scrollItem" wx:for="{{djRecommend}}" wx:key="id" data-id="{{item.id}}" bindtap="goDetail">
+            <image src="{{item.picUrl}}"></image>
+            <text>{{item.name}}</text>
+        </view>
+    </view>
+
+</view>
+

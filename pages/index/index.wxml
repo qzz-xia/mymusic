@@ -29,7 +29,7 @@
       <text class="iconfont icon-gedan"></text>
       <text>精品歌单</text>
     </view>
-    <view class="navItem">
+    <view class="navItem" bindtap="goDj">
       <text class="iconfont icon-diantai1"></text>
       <text>电台</text>
     </view>
